@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect } from "react";
 import './App.css';
 import myPhoto from './images/my_photo.jpg';
@@ -7,6 +8,8 @@ import presentations from "./presentations.json";
 import publications from "./publications.json";
 import { FaPython, FaReact, FaLinkedin } from "react-icons/fa";
 import { SiPytorch } from "react-icons/si";
+
+const BACKEND_URL = "https://my-backend-590209389403.northamerica-northeast1.run.app";
 
 function App() {
   const [page, setPage] = useState("home");
@@ -48,14 +51,14 @@ function Home({ buttons, setPage }) {
   ));
 
   useEffect(() => {
-    fetch("https://my-backend-590209389403.northamerica-northeast1.run.app/")
+    fetch(`${BACKEND_URL}/`)
       .then(res => res.text())
       .then(data => setMessage(data))
       .catch(err => console.error(err));
   }, []);
 
   useEffect(() => {
-    fetch("https://my-backend-590209389403.northamerica-northeast1.run.app/api/about")
+    fetch(`${BACKEND_URL}/api/about`)
       .then((res) => res.json())
       .then((data) => setAbout(data.about))
       .catch((err) => console.error("Error fetching about info:", err));
@@ -119,7 +122,7 @@ function Experience({ buttons, setPage }) {
   ));
 
   useEffect(() => {
-    fetch("https://my-backend-590209389403.northamerica-northeast1.run.app/api/experience")
+    fetch(`${BACKEND_URL}/api/experience`)
       .then((res) => res.json())
       .then((data) => setExperiences(data))
       .catch((err) => console.error("Error fetching experience:", err));
@@ -142,11 +145,8 @@ function Experience({ buttons, setPage }) {
           }
 
           if (exp.type === "image") {
-            // Update image URL to use deployed backend
-            const imageUrl = exp.image.startsWith("http")
-              ? exp.image
-              : `https://my-backend-590209389403.northamerica-northeast1.run.app${exp.image}`;
-
+            // If image URL is relative, prepend backend URL
+            const imageUrl = exp.image.startsWith("http") ? exp.image : `${BACKEND_URL}${exp.image}`;
             return (
               <div key={exp.id} className="experience-image">
                 <img src={imageUrl} alt={`Experience ${exp.id}`} />
@@ -210,42 +210,34 @@ function Skills({ buttons, setPage }) {
             <h2 className="skill-heading">Mathematics</h2>
             <p>Statistics, Graph Theory, Probability, Linear Algebra, Calculus.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading">Geophysics</h2>
             <p>Subsurface resource exploration, Magnetic and Gravity inversion.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading">Machine Learning</h2>
             <p>Linear Regression, Polynomial Regression, Decision Tree, Random Forest, Logistic Regression, SVM, Classification, Clustering, Reinforcement Learning.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading">Deep Learning</h2>
             <p>Standard Neural Networks, CNNs, RNNs.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading"><FaPython className="icon" /> Programming</h2>
             <p>Python, R, SQL.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading"><SiPytorch className="icon" /> Python Libraries</h2>
             <p>NumPy, Pandas, Matplotlib, Scikit-learn, SciPy, PyTorch.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading"><FaReact className="icon" /> Frontend Development</h2>
             <p>React, HTML, JavaScript, CSS.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading"><FaReact className="icon" /> Backend Development</h2>
             <p>Node.js, Docker, Cloud.</p>
           </div>
-
           <div className="skill-card wide">
             <h2 className="skill-heading">Tools</h2>
             <p>MAGNUM (geophysical inversion), Orange (AI), Geosoft, Paraview, QGIS, LaTeX.</p>
@@ -358,7 +350,7 @@ function Certifications({ buttons, setPage }) {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch("https://my-backend-590209389403.northamerica-northeast1.run.app/api/courses")
+    fetch(`${BACKEND_URL}/api/courses`)
       .then(res => res.json())
       .then(data => setCourses(data))
       .catch(err => console.error(err));
@@ -414,4 +406,3 @@ function Certifications({ buttons, setPage }) {
     </div>
   );
 }
-
