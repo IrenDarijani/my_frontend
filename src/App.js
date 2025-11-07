@@ -142,9 +142,14 @@ function Experience({ buttons, setPage }) {
           }
 
           if (exp.type === "image") {
+            // Update image URL to use deployed backend
+            const imageUrl = exp.image.startsWith("http")
+              ? exp.image
+              : `https://my-backend-590209389403.northamerica-northeast1.run.app${exp.image}`;
+
             return (
               <div key={exp.id} className="experience-image">
-                <img src={exp.image} alt={`Experience ${exp.id}`} />
+                <img src={imageUrl} alt={`Experience ${exp.id}`} />
               </div>
             );
           }
