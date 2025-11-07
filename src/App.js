@@ -59,9 +59,9 @@ function Home({ buttons, setPage }) {
 
   useEffect(() => {
     fetch(`${BACKEND_URL}/api/about`)
-      .then(res => res.json())
-      .then(data => setAbout(data.about))
-      .catch(err => console.error("Error fetching about info:", err));
+      .then((res) => res.json())
+      .then((data) => setAbout(data.about))
+      .catch((err) => console.error("Error fetching about info:", err));
   }, []);
 
   return (
@@ -123,9 +123,9 @@ function Experience({ buttons, setPage }) {
 
   useEffect(() => {
     fetch(`${BACKEND_URL}/api/experience`)
-      .then(res => res.json())
-      .then(data => setExperiences(data))
-      .catch(err => console.error("Error fetching experience:", err));
+      .then((res) => res.json())
+      .then((data) => setExperiences(data))
+      .catch((err) => console.error("Error fetching experience:", err));
   }, []);
 
   return (
@@ -145,9 +145,13 @@ function Experience({ buttons, setPage }) {
           }
 
           if (exp.type === "image") {
+            const imageUrl = exp.image.startsWith("http")
+              ? exp.image
+              : `${BACKEND_URL}${exp.image}`;
+
             return (
               <div key={exp.id} className="experience-image">
-                <img src={exp.image} alt={`Experience ${exp.id}`} />
+                <img src={imageUrl} alt={`Experience ${exp.id}`} />
               </div>
             );
           }
@@ -208,42 +212,34 @@ function Skills({ buttons, setPage }) {
             <h2 className="skill-heading">Mathematics</h2>
             <p>Statistics, Graph Theory, Probability, Linear Algebra, Calculus.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading">Geophysics</h2>
             <p>Subsurface resource exploration, Magnetic and Gravity inversion.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading">Machine Learning</h2>
             <p>Linear Regression, Polynomial Regression, Decision Tree, Random Forest, Logistic Regression, SVM, Classification, Clustering, Reinforcement Learning.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading">Deep Learning</h2>
             <p>Standard Neural Networks, CNNs, RNNs.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading"><FaPython className="icon" /> Programming</h2>
             <p>Python, R, SQL.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading"><SiPytorch className="icon" /> Python Libraries</h2>
             <p>NumPy, Pandas, Matplotlib, Scikit-learn, SciPy, PyTorch.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading"><FaReact className="icon" /> Frontend Development</h2>
             <p>React, HTML, JavaScript, CSS.</p>
           </div>
-
           <div className="skill-card">
             <h2 className="skill-heading"><FaReact className="icon" /> Backend Development</h2>
             <p>Node.js, Docker, Cloud.</p>
           </div>
-
           <div className="skill-card wide">
             <h2 className="skill-heading">Tools</h2>
             <p>MAGNUM (geophysical inversion), Orange (AI), Geosoft, Paraview, QGIS, LaTeX.</p>
@@ -387,19 +383,22 @@ function Certifications({ buttons, setPage }) {
       </div>
 
       <ul className='certifications'>
+        {courses.length === 0 && <p>Loading courses...</p>}
         {courses.map(course => {
-          const display =
-            course.status === "Certificate" && course.certificate_date
-              ? (() => {
-                  const date = new Date(course.certificate_date);
-                  const month = date.toLocaleString("en-US", { month: "short" });
-                  const day = date.getDate();
-                  const year = date.getFullYear();
-                  return `Certificate earned on ${month} ${day} ${year}`;
-                })()
-              : course.status === "Audited"
-              ? `Audited, ${course.year}`
-              : "";
+          let display = "";
+          if (course.status === "Certificate") {
+            if (course.certificate_date) {
+              const date = new Date(course.certificate_date);
+              const month = date.toLocaleString("en-US", { month: "short" });
+              const day = date.getDate();
+              const year = date.getFullYear();
+              display = `Certificate earned on ${month} ${day} ${year}`;
+            } else {
+              display = "Certificate (date not available)";
+            }
+          } else if (course.status === "Audited") {
+            display = course.year ? `Audited, ${course.year}` : "Audited";
+          }
 
           return (
             <li key={course.id} className="certific_list">
