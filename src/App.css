@@ -1,38 +1,516 @@
-.App {
+/*
+.top-buttons {
+  display: flex;           
+  gap: 30px;              
+  justify-content: flex-start; 
+} 
+*/
+
+/* ---------- Top Buttons ---------- */
+/* ---------- Top Buttons ---------- */
+
+.top-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* Base button style (matches your existing pages) */
+.nav-button {
+  padding: 20px 20px;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.597);
+  cursor: pointer;
+  margin-left: 30px;
+  transition: color 0.2s;
+}
+
+/* Hover effect */
+
+/* Highlight the clicked button (stays active) */
+
+.nav-button:hover {
+  color: #21201f;
+  transform: scale(1.05);
+}
+
+
+
+.nav-button:active {
+  color: rgba(0, 0, 0, 0.813);
+}
+
+
+
+
+
+.photo-container {
+  position: relative;       /* reference for absolute text positioning */
+  width: 1000px;            /* adjust as needed */
+  margin: 30px auto 0;      /* center container horizontally and add top spacing */
+}
+
+.my-photo {
+  width: 1000px;              /* image fills container width */
+  height: 700px;             /* maintain aspect ratio */
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;      /* optional rounded corners */
+}
+
+
+.name-text {
+  position: absolute;        /* place text on top of image */
+  top: 30px;                 /* distance from top of image */
+  left: 50%;                 /* horizontal center */
+  transform: translateX(-50%); /* center horizontally */
+  color: #333333b8;
+  text-shadow: 0 0 5px #fff;
+  font-size: 60px;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* optional: makes text visible on any background */
+}
+
+.welcome-text {
+  position: absolute;        /* place text on top of image */
+  top: 130px;                 /* distance from top of image */
+  left: 50%;                 /* horizontal center */
+  transform: translateX(-50%); /* center horizontally */
+  color: #333333b8;
+  text-shadow: 0 0 5px #fff;
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* optional: makes text visible on any background */
+}
+
+.about-container {
+  display: flex;                /* Use flexbox layout */
+  flex-direction: column;       /* Stack title and text vertically */
+  /*justify-content: center;      /* Center vertically */
+  align-items: center;          /* Center horizontally */
+  min-height: 100vh;            /* Take full viewport height */
+  text-align: center;           /* Center text inside the container */
+  background-color: #f9fafb;    /* Light background (optional) */
+  color: #333;                  /* Text color */
+  font-family: 'Arial', sans-serif; /* Clean, readable font */
+}
+
+
+.about-text {
+  max-width: 700px;             /* Keep lines at a comfortable width */
+  line-height: 1.6;             /* Add space between lines */
+  /*white-space: pre-line;*/        /* Preserve line breaks from backend text */
+  font-size: 1.1rem;
+}
+
+/* Center the talks list on the page */
+.talks {
+  list-style-type: disc;   /* normal bullets */
+  padding-left: 40px;      /* space for bullets */
+  margin: 80px auto;       /* center the list horizontally */
+  width: 80%;              /* control overall width */
+  max-width: 900px;        /* don’t stretch too wide */
+  text-align: left;        /* text starts from the left */
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* keeps the list centered on the page */
+}
+
+/* Style each talk item */
+.talks li {
+  width: 100%;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Optional: style links if you add any */
+.talks a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.talks a:hover {
+  text-decoration: underline;
+}
+
+
+
+.talks strong {
+  color: #072b46;
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+.talks_header {
+  margin-left:100px;
+  /*text-align: center; */     /* centers the text  horizontally */     
+  margin-top: 150px;            /* pushes it a little down from the top */
+  font-size: 20pt;          /* makes it larger */
+  font-weight: 700;        /* makes it bold */
+  font-family: 'Arial', 'lato';
+  color: #226e93;
+}
+
+/* Center the certifications list on the page */
+.certifications {
+  list-style-type: disc;   /* normal bullets */
+  padding-left: 40px;      /* space for bullets */
+  margin: 80px auto;       /* center horizontally */
+  width: 80%;              /* control width */
+  max-width: 900px;        /* max width */
+  text-align: left;        /* text starts from left */
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* keeps the list centered horizontally */
+}
+
+/* Each certification item */
+.certifications li {
+  width: 100%;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Optional: style links if any */
+.certifications a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.certifications a:hover {
+  text-decoration: underline;
+}
+
+.certifications strong {
+  color: #072b46;
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+/* Center the publications list */
+/* Center the publications list on the page */
+.publications {
+  list-style-type: disc;   /* normal bullets */
+  padding-left: 40px;      /* space for bullets */
+  margin: 80px auto;       /* center the list horizontally */
+  width: 80%;              /* control overall width */
+  max-width: 900px;        /* don’t stretch too wide */
+  text-align: left;        /* text starts from the left */
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* keeps the list centered on the page */
+}
+
+/* Style each publication item simply */
+.publications li {
+  width: 100%;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Optional: style publication links */
+.publications a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.publications a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+.publications strong {
+  color: #072b46;
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+/* Centers everything inside the experience page */
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* center the container, not the text */
+  justify-content: flex-start;
+  padding: 60px 20px;
+}
+
+/* Each experience card — left-aligned text */
+.experience-card,
+.experience-html,
+.experience-image {
+  width: 80%;
+  max-width: 900px;
+  margin-bottom: 40px;
+  text-align: left; /* keep JSON content left-aligned */
+}
+
+
+.top-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #2f2e2c;
+  font-size: 48px;
+  font-weight: bold;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Container holding each image block */
+.experience-image {
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;       /* centers vertically if needed */
+  margin: 30px 0;            /* spacing above and below */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* The image itself */
+.experience-image img {
+  width: 70%;                /* makes it smaller, adjust as needed (e.g., 40% or 70%) */
+  max-width: 500px;          /* prevents it from getting too large on big screens */
+  height: auto;              /* maintains aspect ratio */
+  border-radius: 10px;       /* optional: gives rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* optional: soft shadow */
+  transition: transform 0.3s ease; /* adds smooth hover effect */
+}
+
+/* Optional: zoom slightly on hover */
+.experience-image img:hover {
+  transform: scale(1.03);
+}
+
+/* Make position and institution text smaller */
+.experience-card h2 {
+  font-size: 1rem;       /* smaller than default */
+  font-weight: 600;      /* keep it slightly bold */
+  margin-bottom: 4px;
+   color: #072b46;         /* darker for readability */
+}
+
+.experience-card h3 {
+  font-size: 0.9rem;     /* smaller than h2 */
+  font-weight: 600;
+  color: #072b46; 
+  margin-bottom: 4px;
+}
+
+
+/* ---------- Overall Layout ---------- */
+.skills-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Inter", sans-serif;
+  color: #333;
+}
+
+
+
+/* ---------- Title ---------- */
+.skills-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 60px;
+  margin-top: 10px;
+  color: #1f3b73;
+}
+
+/* ---------- Skills Grid ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* ---------- Each Skill Card ---------- */
+.skill-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.skill-card:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+/* For the wide card that spans across the full width */
+.skill-card.wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 700px) {
+  .skill-card.wide {
+    grid-column: span 1;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ---------- Headings ---------- */
+.skill-heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2853a3;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+/* ---------- Text ---------- */
+.skill-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Remove any white space above */
+.other-page {
+  margin: 0;
+  padding: 0;
+}
+
+/* Image container */
+.top-buttons1 {
+  position: absolute;
+  top: 10px;
+  left: 51%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  z-index: 2;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  flex-wrap: nowrap;
+}
+
+/* Button styling */
+.nav-button1 {
+  padding: 15px 25px;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  border: none;
+  border-radius: 8px;
+  background: transparent; /* fully transparent, no box */
+  color: #2f2e2c;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap; /* prevent button text from wrapping */
+}
+
+.nav-button1:hover {
+  color: #21201f;
+  transform: scale(1.05);
+}
+
+
+
+.nav-button1:active {
+  color: rgba(0, 0, 0, 0.813);
+}
+
+
+/* Image container */
+.topImage-container {
+  position: relative;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 500px; /* adjust the height of the image section */
+  overflow: hidden; /* crop image if it's too tall */
+}
+
+/* Image fills the container and maintains aspect ratio */
+.top-image {
+  width: 100%;
+  height: 100%; /* fill the container */
+  object-fit: cover; /* crop/cover without distortion */
+  display: block;
+}
+
+/* Buttons on top */
+
+
+/* Title centered in the middle of the image */
+.top-text {
+  position: absolute;
+  top: 35%; /* move it slightly up from exact center */
+  left: 50%;
+  transform: translate(-50%, -50%); /* still center horizontally and adjust vertically */
+  color: #333333b8;
+  font-size: 60px;
+  font-weight: bold;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-family: sans-serif;
+}
+
+.contact-footer {
+  text-align: center;
+  margin-top: 100px;
+  padding: 60px 20px;
+  background-color: #385b72;
+  border-top: 2px solid #ddd;
+}
+
+.contact-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+}
+
+.contact-text {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.contact-email {
+  font-size: 20px;
+  color: #ffffff;
+
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+  color:#ffffff;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column; /* stack email and LinkedIn vertically */
+  align-items: center;
+  gap: 30px;              /* space between email and icon */
+}
+
+.contact-linkedin {
+  color: #ffffff;                 /* white icon */
+  font-size: 30px;                /* icon size */
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: transform 0.2s ease;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.contact-linkedin:hover {
+  transform: scale(1.1);          /* slight grow on hover */
 }

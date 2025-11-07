@@ -1,0 +1,66 @@
+[
+
+  {
+    "id": 1,
+    "title": "Reconstructing 2-D geology map and 3-D geology model of the Iron Horse area in Churchill Falls, Labrador, using machine learning methods and geophysical inversion",
+    "event": "Weekly Group Meetings",
+    "place": "Memorial University of Newfoundland",
+    "date": "Jan 2025"
+  },
+  {
+    "id": 2,
+    "title": "Colourings of path systems",
+    "event": "CMS Anniversary Summer Meeting",
+    "place": "Memorial University of Newfoundland",
+    "date": "June 2022"
+  },
+  {
+    "id": 3,
+    "title": "Arc-disjoint hamiltonian paths in Cartesian products of directed cycles",
+    "event": "43rd Australasian Combinatorics Conference",
+    "place": "Online",
+    "date": "Dec 2021"
+  },
+  {
+    "id": 4,
+    "title": "Arc-disjoint hamiltonian paths in Cartesian products of directed cycles",
+    "event": "University of Lethbridge",
+    "place": "Online",
+    "date": "Oct 2021"
+  },
+  {
+    "id": 5,
+    "title": "Colourings of star systems",
+    "event": "CMS Anniversary Summer Meeting",
+    "place": "Online",
+    "date": "June 2021"
+  },
+  {
+    "id": 6,
+    "title": "Colourings of star systems",
+    "event": "CMS Winter Meeting",
+    "place": "Online",
+    "date": "Dec 2020"
+  },
+  {
+    "id": 7,
+    "title": "Colourings of G-designs",
+    "event": "University of Lethbridge",
+    "place": "Online",
+    "date": "Nov 2020"
+  },
+  {
+    "id": 8,
+    "title": "k-colourings of star systems",
+    "event": "7th CanaDAM Conference",
+    "place": "Simon Fraser University, Vancouver, BC",
+    "date": "May 2019"
+  },
+  {
+    "id": 9,
+    "title": "The chromatic index of block intersection graphs of Steiner triple systems",
+    "event": "6th CanaDAM Conference",
+    "place": "Ryerson University, Toronto, ON",
+    "date": "June 2017"
+  }
+]

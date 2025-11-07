@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "authors": "I. Darijani, C. G. Farquharson, and P. G. Lelièvre",
+    "title": "Reconstructing 2-D geology map and 3-D geology model of the Iron Horse area in Churchill Falls, Labrador, using machine learning methods and geophysical inversion",
+    "journal": "Ready to submit",
+    "year": "2025"
+  },
+  {
+    "id": 2,
+    "authors": "I. Darijani, B. Miraftab, and D. W. Morris",
+    "title": "Arc-disjoint hamiltonian paths in Cartesian products of directed cycles",
+    "journal": "Ars Mathematica Contemporanea",
+    "year": "2024",
+    "arxiv": "https://arxiv.org/abs/2203.11017"
+  },
+  {
+    "id": 3,
+    "authors": "R. Bailey and I. Darijani",
+    "title": "Block colourings of star systems",
+    "journal": "Discrete Mathematics",
+    "year": "2023",
+    "arxiv": "https://arxiv.org/abs/2209.04946"
+  },
+  {
+    "id": 4,
+    "authors": "I. Darijani and D.A. Pike",
+    "title": "Colourings of path systems",
+    "journal": "Stinson66 Volume",
+    "year": "2023",
+    "arxiv": "https://doi.org/10.48550/arXiv.2204.06630"
+  },
+  {
+    "id": 5,
+    "authors": "I. Darijani and D.A. Pike",
+    "title": "Colourings of star systems",
+    "journal": "Journal of Combinatorial Designs",
+    "year": "2020",
+    "pages": "1-23",
+    "doi": "https://doi.org/10.1002/jcd.21712"
+  },
+  {
+    "id": 6,
+    "authors": "I. Darijani, D.A. Pike and J. Poulin",
+    "title": "The chromatic index of block intersection graphs of Kirkman triple systems and cyclic Steiner triple systems",
+    "journal": "Australasian Journal of Combinatorics",
+    "year": "2017",
+    "volume": "69",
+    "pages": "145-158",
+    "doi": "https://ajc.maths.uq.edu.au/pdf/69/ajc_v69_p145.pdf"
+  },
+  {
+    "id": 7,
+    "authors": "I. Darijani and H. Usefi",
+    "title": "The classification of 5-dimensional p-nilpotent restricted Lie algebras over perfect fields I",
+    "journal": "Journal of Algebra",
+    "year": "2016",
+    "volume": "464",
+    "pages": "97-140",
+    "doi": "https://doi.org/10.1016/j.jalgebra.2016.06.011"
+  }
+]
+
+  
