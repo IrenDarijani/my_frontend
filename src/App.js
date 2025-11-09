@@ -350,15 +350,14 @@ function Talks({ buttons, setPage }) {
 // ----------- Certifications -----------
 function Certifications({ buttons, setPage }) {
   const [courses, setCourses] = useState([]);
+  const [activeButton, setActiveButton] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/courses")
+    fetch(`${BACKEND_URL}/api/courses`)
       .then(res => res.json())
       .then(data => setCourses(data))
-      .catch(err => console.error(err));
+      .catch(err => console.error("Error fetching courses:", err));
   }, []);
-
-  const [activeButton, setActiveButton] = useState(null);
 
   const handleClick = (name) => {
     setActiveButton(name.toLowerCase());
@@ -382,26 +381,25 @@ function Certifications({ buttons, setPage }) {
         <div className="top-buttons1">{buttonElements}</div>
         <h1 className="top-text">Certifications</h1>
       </div>
+
       <ul className='certifications'>
-  {courses.map((course, index) => {
-    let display = "";
+        {courses.map((course, index) => {
+          let display = "";
 
-    if (course.status === "Certificate earned" && course.monthYear) {
-      display = `Certificate earned on ${course.monthYear}`;
-    } else if (course.status === "Audited" && course.year) {
-      display = `Audited, ${course.year}`;
-    }
+          if (course.status === "Certificate earned" && course.monthYear) {
+            display = `Certificate earned on ${course.monthYear}`;
+          } else if (course.status === "Audited" && course.year) {
+            display = `Audited, ${course.year}`;
+          }
 
-    return (
-      <li key={index} className="certific_list">
-        <strong>{course.title}</strong>, {course.platform}, {display}
-      </li>
-    );
-  })}
-</ul>
-
-
-      
+          return (
+            <li key={index} className="certific_list">
+              <strong>{course.title}</strong>, {course.platform}
+              {display ? `, ${display}` : ""}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
