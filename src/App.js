@@ -145,10 +145,10 @@ function Experience({ buttons, setPage }) {
           }
 
           if (exp.type === "image") {
+            // Always use deployed backend URL for images
             const imageUrl = exp.image.startsWith("http")
               ? exp.image
-              : `${BACKEND_URL}${exp.image}`;
-
+              : `${BACKEND_URL}/images/${exp.image}`;
             return (
               <div key={exp.id} className="experience-image">
                 <img src={imageUrl} alt={`Experience ${exp.id}`} />
@@ -178,7 +178,6 @@ function Experience({ buttons, setPage }) {
     </div>
   );
 }
-
 // ----------- Skills -----------
 function Skills({ buttons, setPage }) {
   const [activeButton, setActiveButton] = useState(null);
