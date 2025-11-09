@@ -350,6 +350,14 @@ function Talks({ buttons, setPage }) {
 // ----------- Certifications -----------
 function Certifications({ buttons, setPage }) {
   const [courses, setCourses] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8080/api/courses")
+      .then(res => res.json())
+      .then(data => setCourses(data))
+      .catch(err => console.error(err));
+  }, []);
+
   const [activeButton, setActiveButton] = useState(null);
 
   const handleClick = (name) => {
@@ -367,13 +375,6 @@ function Certifications({ buttons, setPage }) {
     </button>
   ));
 
-  useEffect(() => {
-    fetch(`${BACKEND_URL}/api/courses`)
-      .then(res => res.json())
-      .then(data => setCourses(data))
-      .catch(err => console.error("Error fetching courses:", err));
-  }, []);
-
   return (
     <div className='other-page'>
       <div className="topImage-container">
@@ -381,32 +382,26 @@ function Certifications({ buttons, setPage }) {
         <div className="top-buttons1">{buttonElements}</div>
         <h1 className="top-text">Certifications</h1>
       </div>
-
       <ul className='certifications'>
-        {courses.length === 0 && <p>Loading courses...</p>}
-        {courses.map(course => {
-          let display = "";
-          if (course.status === "Certificate") {
-            if (course.certificate_date) {
-              const date = new Date(course.certificate_date);
-              const month = date.toLocaleString("en-US", { month: "short" });
-              const day = date.getDate();
-              const year = date.getFullYear();
-              display = `Certificate earned on ${month} ${day} ${year}`;
-            } else {
-              display = "Certificate (date not available)";
-            }
-          } else if (course.status === "Audited") {
-            display = course.year ? `Audited, ${course.year}` : "Audited";
-          }
+  {courses.map((course, index) => {
+    let display = "";
 
-          return (
-            <li key={course.id} className="certific_list">
-              <strong>{course.title}</strong>, {course.platform}, {display}
-            </li>
-          );
-        })}
-      </ul>
+    if (course.status === "Certificate earned" && course.monthYear) {
+      display = `Certificate earned on ${course.monthYear}`;
+    } else if (course.status === "Audited" && course.year) {
+      display = `Audited, ${course.year}`;
+    }
+
+    return (
+      <li key={index} className="certific_list">
+        <strong>{course.title}</strong>, {course.platform}, {display}
+      </li>
+    );
+  })}
+</ul>
+
+
+      
     </div>
   );
 }
