@@ -514,3 +514,13 @@
 .contact-linkedin:hover {
   transform: scale(1.1);          /* slight grow on hover */
 }
+
+.contact-icons {
+  display: flex;
+  gap: 15px; /* space between LinkedIn and GitHub */
+  margin-top: 5px; /* optional, space from email */
+}
+
+.contact-github {
+  color: white;
+}
