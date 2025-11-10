@@ -510,9 +510,6 @@
   transition: transform 0.2s ease;
 }
 
-.contact-linkedin svg {
-  color: #ffffff;
-}
 
 .contact-linkedin:hover {
   transform: scale(1.1); 
