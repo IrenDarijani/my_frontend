@@ -512,7 +512,8 @@
 }
 
 .contact-linkedin:hover {
-  transform: scale(1.1);          /* slight grow on hover */
+  transform: scale(1.1); 
+ 
 }
 
 .contact-icons {
