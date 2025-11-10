@@ -76,38 +76,45 @@ function Home({ buttons, setPage }) {
       <div className="about-container">
         <div className="about-text" dangerouslySetInnerHTML={{ __html: about }} />
       </div>
+       <footer className="contact-footer">
+  <h2 className="contact-title">Get in touch</h2>
+  <p className="contact-text">
+    I’m always open to discussing new opportunities or collaborations.  
+    You can reach me directly at:
+  </p>
 
-      <footer className="contact-footer">
-        <h2 className="contact-title">Get in touch</h2>
-        <p className="contact-text">
-          I’m always open to discussing new opportunities or collaborations.  
-          You can reach me directly at:
-        </p>
-         <div className="contact-links">
-  <a href="mailto:iren.darijani2@gmail.com" className="contact-email">
-    iren.darijani2@gmail.com
-  </a>
+  <div className="contact-container" style={{ display: "flex", alignItems: "center", gap: "20px", marginTop: "10px" }}>
+    {/* Email */}
+    <a href="mailto:iren.darijani2@gmail.com" className="contact-email" style={{ color: "inherit", textDecoration: "none", fontWeight: "bold" }}>
+      iren.darijani2@gmail.com
+    </a>
 
-  <div className="contact-icons">
-    <a
-      href="https://www.linkedin.com/in/iren-darijani-phd-5917276a/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="contact-linkedin"
-    >
-      <FaLinkedin size={30} /> {/* LinkedIn icon */}
-    </a>
-    <a
-      href="https://github.com/IrenDarijani"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="contact-github"
-    >
-      <FaGithub size={30} /> {/* GitHub icon */}
-    </a>
+    {/* Social icons */}
+    <div className="contact-icons" style={{ display: "flex", gap: "15px" }}>
+      <a
+        href="https://www.linkedin.com/in/iren-darijani-phd-5917276a/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="contact-linkedin"
+        style={{ color: "#0A66C2" }} // LinkedIn blue
+      >
+        <FaLinkedin size={30} />
+      </a>
+
+      <a
+        href="https://github.com/IrenDarijani"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="contact-github"
+        style={{ color: "#ffffff" }} // GitHub white
+      >
+        <FaGithub size={30} />
+      </a>
+    </div>
   </div>
-</div>      
-       </footer>
+</footer>
+
+      
     </div>
   );
 }
