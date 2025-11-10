@@ -96,7 +96,7 @@ function Home({ buttons, setPage }) {
         target="_blank"
         rel="noopener noreferrer"
         className="contact-linkedin"
-        } // LinkedIn blue
+        
       >
         <FaLinkedin size={30} />
       </a>
