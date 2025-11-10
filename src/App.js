@@ -83,20 +83,20 @@ function Home({ buttons, setPage }) {
     You can reach me directly at:
   </p>
 
-  <div className="contact-links" style={{ display: "flex", alignItems: "center", gap: "20px", marginTop: "10px" }}>
+  <div className="contact-links" >
     {/* Email */}
     <a href="mailto:iren.darijani2@gmail.com" className="contact-email" >
       iren.darijani2@gmail.com
     </a>
 
     {/* Social icons */}
-    <div className="contact-icons" style={{ display: "flex", gap: "15px" }}>
+    <div className="contact-icons" >
       <a
         href="https://www.linkedin.com/in/iren-darijani-phd-5917276a/"
         target="_blank"
         rel="noopener noreferrer"
         className="contact-linkedin"
-        style={{ color: "#0A66C2" }} // LinkedIn blue
+        } // LinkedIn blue
       >
         <FaLinkedin size={30} />
       </a>
@@ -106,7 +106,7 @@ function Home({ buttons, setPage }) {
         target="_blank"
         rel="noopener noreferrer"
         className="contact-github"
-        style={{ color: "#ffffff" }} // GitHub white
+         // GitHub white
       >
         <FaGithub size={30} />
       </a>
