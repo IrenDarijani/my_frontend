@@ -83,7 +83,7 @@ function Home({ buttons, setPage }) {
     You can reach me directly at:
   </p>
 
-  <div className="contact-container" style={{ display: "flex", alignItems: "center", gap: "20px", marginTop: "10px" }}>
+  <div className="contact-links" style={{ display: "flex", alignItems: "center", gap: "20px", marginTop: "10px" }}>
     {/* Email */}
     <a href="mailto:iren.darijani2@gmail.com" className="contact-email" style={{ color: "inherit", textDecoration: "none", fontWeight: "bold" }}>
       iren.darijani2@gmail.com
