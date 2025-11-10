@@ -83,20 +83,31 @@ function Home({ buttons, setPage }) {
           I’m always open to discussing new opportunities or collaborations.  
           You can reach me directly at:
         </p>
-        <div className="contact-links">
-          <a href="mailto:iren.darijani2@gmail.com" className="contact-email">
-            iren.darijani2@gmail.com
-          </a>
-          <a
-            href="https://www.linkedin.com/in/iren-darijani-phd-5917276a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="contact-linkedin"
-          >
-            <FaLinkedin size={30} />
-          </a>
-        </div>
-      </footer>
+         <div className="contact-links">
+  <a href="mailto:iren.darijani2@gmail.com" className="contact-email">
+    iren.darijani2@gmail.com
+  </a>
+
+  <div className="contact-icons">
+    <a
+      href="https://www.linkedin.com/in/iren-darijani-phd-5917276a/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="contact-linkedin"
+    >
+      <FaLinkedin size={30} /> {/* LinkedIn icon */}
+    </a>
+    <a
+      href="https://github.com/IrenDarijani"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="contact-github"
+    >
+      <FaGithub size={30} /> {/* GitHub icon */}
+    </a>
+  </div>
+</div>      
+       </footer>
     </div>
   );
 }
