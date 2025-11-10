@@ -85,7 +85,7 @@ function Home({ buttons, setPage }) {
 
   <div className="contact-links" style={{ display: "flex", alignItems: "center", gap: "20px", marginTop: "10px" }}>
     {/* Email */}
-    <a href="mailto:iren.darijani2@gmail.com" className="contact-email" style={{ color: "inherit", textDecoration: "none", fontWeight: "bold" }}>
+    <a href="mailto:iren.darijani2@gmail.com" className="contact-email" >
       iren.darijani2@gmail.com
     </a>
 
