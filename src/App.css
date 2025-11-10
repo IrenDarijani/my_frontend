@@ -503,12 +503,15 @@
 }
 
 .contact-linkedin {
-  color: #ffffff;                 /* white icon */
   font-size: 30px;                /* icon size */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease;
+}
+
+.contact-linkedin svg {
+  color: #ffffff;
 }
 
 .contact-linkedin:hover {
