@@ -9,7 +9,7 @@ import publications from "./publications.json";
 import { FaPython, FaReact, FaLinkedin,FaGithub } from "react-icons/fa";
 import { SiPytorch } from "react-icons/si";
 
-const BACKEND_URL = "https://my-backend-592186673057.northamerica-northeast1.run.app/";
+const BACKEND_URL = "https://my-backend-272539511213.northamerica-northeast1.run.app/";
 
 function App() {
   const [page, setPage] = useState("home");
